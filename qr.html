@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qr generator</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <nav>
+        <ul>
+          <li>MyQRCode.com</li>
+        </ul>
+    </nav>
+    <div id="quote-box">
+        <img id="img">
+    </div>
+   
+   <div class="input">
+       <input id="loadQuote" type="url" required placeholder="Enter URL">
+       <button id="loadQuote1">GET QR CODE</button>
+   </div >
+    
+    <script>
+    
+    const rec=document.querySelector('#loadQuote');
+    const btn1=document.querySelector("#loadQuote1");
+    const img= document.querySelector("#img")
+    
+    btn1.addEventListener("click",()=>{
+        data=rec.value
+        let url= "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+data
+        img.src=url;
+
+
+    })
+
+    
+        </script>
+        
+        
+</body>
+</html>
